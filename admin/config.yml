@@ -1,7 +1,11 @@
 backend:
   name: github
-  repo: ABmawouli/sg2d-togo # Remplace par ton dépôt GitHub
-  branch: main # ou master selon ton dépôt
+  repo: ABmawouli/sg2d-togo  # ton dépôt GitHub exact
+  branch: main
+  site_domain: sg2d-togo.netlify.app  # ton domaine Netlify (important)
+  base_url: https://sg2d-togo.netlify.app/.netlify/identity
+  auth_endpoint: auth
+
 media_folder: "imgs/uploads"
 public_folder: "/imgs/uploads"
 

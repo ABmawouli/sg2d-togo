@@ -1,0 +1,39 @@
+.banner {
+  position: relative;
+  background-image: url('../image/carousel-astronomie-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  /* Ajout de l’animation */
+  animation: defileFond 10s infinite alternate ease-in-out;
+}
+
+/* effet de fondu entre deux images */
+@keyframes defileFond {
+  0% {
+    background-image: url('../image/carousel-astronomie-2.jpg');
+  }
+  50% {
+    background-image: url('../image/carousel-astronomie-3.jpg');
+  }
+  100% {
+    background-image: url('../image/logo-s2gd.png');
+  }
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* assombrir un peu */
+  z-index: 1;
+}
+
+.banner > .container {
+  position: relative;
+  z-index: 2; /* le contenu reste visible au-dessus */
+}
+
+

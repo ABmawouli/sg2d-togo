@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG2D - Science Géologique et Astronomie pour un Développement Durable</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        :root {
+            --blue-sg2d: #0077b6;
+            --light-blue: #00b4d8;
+            --earth-tone: #d9cba3;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar */
+        .nav {
+            background-color: var(--blue-sg2d);
+            padding: 0.8rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            width: 150px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-transform: uppercase;
+            margin-right: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-blue);
+        }
+
+        .nav-btn {
+            display: none;
+        }
+
+        /* Sidebar mobile */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: var(--blue-sg2d);
+            padding: 2rem;
+            transition: 0.3s;
+            z-index: 1500;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-links a {
+            display: block;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Banner */
+        .banner-picture {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .banner-info {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            color: var(--white);
+            max-width: 45%;
+            z-index: 10;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .banner-info h3 {
+            font-size: 1.8rem;
+            color: var(--light-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .banner-info h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .banner-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            color: #e0f7fa;
+        }
+
+        .btn {
+            background-color: var(--light-blue);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--blue-sg2d);
+            transform: translateY(-3px);
+        }
+
+        .carousel-indicators li {
+            background-color: var(--white);
+        }
+
+        .carousel-indicators .active {
+            background-color: var(--light-blue);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .banner-info::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 6px;
+            background: linear-gradient(90deg, #a77c50, #d9cba3);
+            margin-top: 15px;
+            border-radius: 3px;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-btn {
+                display: block;
+                color: var(--white);
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+            }
+
+            .banner-info {
+                max-width: 80%;
+                left: 10%;
+            }
+
+            .banner-info h2 {
+                font-size: 2rem;
+            }
+
+            .banner-info h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="nav">
+        <div class="nav-center d-flex justify-content-between align-items-center">
+            <img src="./img/logo.png" class="nav-logo" alt="Logo SG2D">
+            <ul class="nav-links d-flex list-unstyled mb-0">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-btn" id="nav-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar mobile -->
+    <aside class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+        <ul class="sidebar-links list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </aside>
+
+    <!-- Banner Carousel -->
+    <div class="banner">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img src="./img/slide1.jpg" class="banner-picture" alt="SG2D Astronomie">
+                    <div class="banner-info">
+                        <h3>Bienvenue sur le site officiel de</h3>
+                        <h2>Science Géologique & Astronomie Durable</h2>
+                        <p class="banner-text">
+                            ONG togolaise dédiée à la vulgarisation des sciences de la Terre et de l’Univers.
+                        </p>
+                        <a href="about.html" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="./img/slide2.jpg" class="banner-picture" alt="Activités SG2D">
+                    <div class="banner-info">
+                        <h3>Explorer le cosmos</h3>
+                        <h2>Projets éducatifs et vulgarisation scientifique</h2>
+                        <p class="banner-text">
+                            SG2D initie des projets de sensibilisation et de formation pour faire découvrir la géologie et l’astronomie.
+                        </p>
+                        <a href="projects.html" class="btn">Découvrir nos projets</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <img src="./img/slide3.jpg" class="banner-picture" alt="Projet durable SG2D">
+                    <div class="banner-info">
+                        <h3>Contribuer au futur</h3>
+                        <h2>Science et Développement Durable</h2>
+                        <p class="banner-text">
+                            SG2D œuvre pour une meilleure gestion des ressources naturelles et pour l’éducation scientifique des jeunes générations.
+                        </p>
+                        <a href="contact.html" class="btn">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation controls -->
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Popular Posts -->
+    <div class="popular-post">
+        <div class="container">
+            <section class="section projects">
+                <div class="section-title">
+                    <h2>Articles Populaires</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="section-center projects-center">
+                    <a href="detail.html" class="project-1">
+                        <article class="project">
+                            <img src="./img/blog1.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Découvrir les planètes du système solaire</h4>
+                                <p>Astronomie</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="detail.html" class="project-2">
+                        <article class="project">
+                            <img src="./img/blog2.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Observation des étoiles et constellations</h4>
+                                <p>Astronomie</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="detail.html" class="project-3">
+                        <article class="project">
+                            <img src="./img/slide1.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Minéraux et fossiles remarquables</h4>
+                                <p>Géologie</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="detail.html" class="project-4">
+                        <article class="project">
+                            <img src="./img/blog3.jpg" alt="" class="project-img" />
+                            <div class="project-info">
+                                <h4>Exploration des volcans et phénomènes naturels</h4>
+                                <p>Géologie</p>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="categori-list">
+        <div class="container">
+            <section class="section bg-grey">
+                <div class="section-title mt-5">
+                    <h2>Catégories</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="section-center services-center">
+                    <article class="service">
+                        <a href="category.html">
+                            <i class="fas fa-meteor ser-icon"></i>
+                            <h4>Astronomie</h4>
+                            <div class="underline"></div>
+                            <p>Articles sur l’astronomie, les étoiles, planètes et observation du ciel nocturne.</p>
+                        </a>
+                    </article>
+                    <article class="service">
+                        <a href="category.html">
+                            <i class="fas fa-mountain ser-icon"></i>
+                            <h4>Géologie</h4>
+                            <div class="underline"></div>
+                            <p>Articles sur les roches, minéraux, volcans et phénomènes géologiques.</p>
+                        </a>
+                    </article>
+                    <article class="service">
+                        <a href="category.html">
+                            <i class="fas fa-flask ser-icon"></i>
+                            <h4>Éducation Scientifique</h4>
+                            <div class="underline"></div>
+                            <p>Ressources pédagogiques pour enseigner et apprendre la science de la Terre et de l’Univers.</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <div class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="section-title mt-5">
+                    <h2>Tous les Articles</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="mb-5">
+                    <section class="section" id="featured">
+                        <div class="section-center featured-center">
+                            <div class="row justify-content-start">
+                                <!-- Single Blog -->
+                                <div class="col-lg-6">
+                                    <article class="blog-card">
+                                        <div class="blog-img-container">
+                                            <a href="#"><img src="./img/blog1.jpg" class="blog-img" alt="" /></a>
+                                            <p class="blog-date">12 octobre 2025</p>
+                                        </div>
+                                        <div class="blog-info">
+                                            <div class="blog-title">
+                                                <a href="detail.html">
+                                                    <h4>Observation de Jupiter et ses lunes</h4>
+                                                </a>
+                                                <a href="category.html">
+                                                    <p>Astronomie</p>
+                                                </a>
+                                            </div>
+                                            <p>Apprenez à observer Jupiter et comprendre ses principales caractéristiques.</p>
+                                            <div class="blog-footer">
+                                                <a href=""><p><span><i class="fas fa-user"></i></span> SG2D</p></a>
+                                                <a href="detail.html"><p>Lire plus...</p></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <article class="blog-card">
+                                        <div class="blog-img-container">
+                                            <a href="#"><img src="./img/blog2.jpg" class="blog-img" alt="" /></a>
+                                            <p class="blog-date">10 octobre 2025</p>
+                                        </div>
+                                        <div class="blog-info">
+                                            <div class="blog-title">
+                                                <a href="detail.html">
+                                                    <h4>Les volcans actifs au Togo</h4>
+                                                </a>
+                                                <a href="category.html">
+                                                    <p>Géologie</p>
+                                                </a>
+                                            </div>
+                                            <p>Découverte des volcans et phénomènes géologiques dans notre région.</p>
+                                            <div class="blog-footer">
+                                                <a href=""><p><span><i class="fas fa-user"></i></span> SG2D</p></a>
+                                                <a href="detail.html"><p>Lire plus...</p></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <article class="blog-card">
+                                        <div class="blog-img-container">
+                                            <a href="#"><img src="./img/blog3.jpg" class="blog-img" alt="" /></a>
+                                            <p class="blog-date">8 octobre 2025</p>
+                                        </div>
+                                        <div class="blog-info">
+                                            <div class="blog-title">
+                                                <a href="detail.html">
+                                                    <h4>Constellations et navigation céleste</h4>
+                                                </a>
+                                                <a href="category.html">
+                                                    <p>Astronomie</p>
+                                                </a>
+                                            </div>
+                                            <p>Comment identifier les constellations et utiliser les étoiles pour la navigation.</p>
+                                            <div class="blog-footer">
+                                                <a href=""><p><span><i class="fas fa-user"></i></span> SG2D</p></a>
+                                                <a href="detail.html"><p>Lire plus...</p></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <article class="blog-card">
+                                        <div class="blog-img-container">
+                                            <a href="#"><img src="./img/blog3.jpg" class="blog-img" alt="" /></a>
+                                            <p class="blog-date">5 octobre 2025</p>
+                                        </div>
+                                        <div class="blog-info">
+                                            <div class="blog-title">
+                                                <a href="detail.html">
+                                                    <h4>Étude des minéraux rares</h4>
+                                                </a>
+                                                <a href="category.html">
+                                                    <p>Géologie</p>
+                                                </a>
+                                            </div>
+                                            <p>Comprendre les propriétés et l’origine des minéraux rares dans la nature.</p>
+                                            <div class="blog-footer">
+                                                <a href=""><p><span><i class="fas fa-user"></i></span> SG2D</p></a>
+                                                <a href="detail.html"><p>Lire plus...</p></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blog-btn mt-5">
+                            <a href="blog.html" class="btn">Voir tous les articles</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="section newsletter" id="newsletter">
+        <div class="container section-center newsletter-center">
+            <div class="newsletter-title">
+                <h3>Recevez les dernières actualités scientifiques</h3>
+                <p>Inscrivez-vous à notre newsletter et restez informé des projets SG2D</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" class="form-control" placeholder="Votre email" />
+                <button type="submit" class="btn-submit">S'abonner</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <ul class="social-icons mt-5">
+            <li class="pr-3"><a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.linkedin.com" class="social-icon"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <p>&copy; <span id="date"></span> SG2D. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./bootstrap/js/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const navBtn = document.getElementById('nav-btn');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        navBtn.addEventListener('click', () => sidebar.classList.add('active'));
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('active'));
+
+        document.getElementById('date').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

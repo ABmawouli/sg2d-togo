@@ -1,13 +1,14 @@
 backend:
-  name: github
-  repo: ABmawouli/sg2d-togo  # ton dépôt GitHub exact
+  name: git-gateway
   branch: main
-  site_domain: sg2d-togo.netlify.app  # ton domaine Netlify (important)
-  base_url: https://sg2d-togo.netlify.app/.netlify/identity
-  auth_endpoint: auth
+  repo: ABmawouli/sg2d-togo
+  identity_url: https://sg2d-togo.netlify.app/.netlify/identity
+  gateway_url: https://sg2d-togo.netlify.app/.netlify/git
 
 media_folder: "imgs/uploads"
 public_folder: "/imgs/uploads"
+
+publish_mode: editorial_workflow
 
 collections:
   - name: "articles"

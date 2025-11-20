@@ -185,11 +185,21 @@ main {
 
 /*
 =============== 
-Navbar
+old-navbar
 ===============
 */
+/* Espace entre les liens du menu principal */
+.old-nav-links li {
+  margin-right: 10px; /* ajuster la distance selon besoin */
+}
 
-.nav-links {
+/* Pour le bouton WhatsApp spécifique */
+.old-nav-links .whatsapp-btn {
+  margin-left: 20px; /* espace entre Actualité et WhatsApp */
+}
+
+
+.old-nav-links {
     display: none;
 }
 
@@ -209,19 +219,19 @@ Navbar
     margin: 0 auto;
 }
 
-.nav-header {
+.old-nav-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     -webkit-box-align: center;
     align-items: center;
 }
 
-.nav-header img {
+.old-nav-header img {
     width: 90px;
     height: 90px;
 }
 
-.nav-btn {
+.old-nav-btn {
     background: transparent;
     border-color: transparent;
     color: var(--clr-primary-5);
@@ -236,11 +246,11 @@ Navbar
         background: var(--clr-primary-10);
     }
 
-    .nav-btn {
+    .old-nav-btn {
         display: none;
     }
 
-    .nav-links {
+    .old-nav-links {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         justify-items: center;
@@ -249,7 +259,7 @@ Navbar
         column-gap: 0rem;
     }
 
-    .nav-links a {
+    .old-nav-links a {
         text-transform: capitalize;
         color: var(--clr-grey-1);
         font-weight: bold;
@@ -258,7 +268,7 @@ Navbar
         transition: var(--transition);
     }
 
-    .nav-links a:hover {
+    .old-nav-links a:hover {
         color: var(--clr-primary-5);
     }
 
@@ -269,14 +279,14 @@ Navbar
         align-items: center;
     }
 
-    .nav-links {
+    .old-nav-links {
         justify-self: end;
     }
 }
 
-/* fixed navbar */
+/* fixed old-navbar */
 
-.navbar-fixed {
+.old-navbar-fixed {
     position: fixed;
     top: 0;
     left: 0;
@@ -288,11 +298,11 @@ Navbar
 
 /*
 =============== 
-Sidebar
+old-sidebar
 ===============
 */
 
-.sidebar {
+.old-sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -309,18 +319,18 @@ Sidebar
     transform: translate(-100%);
 }
 
-.show-sidebar {
+.show-old-sidebar {
     -webkit-transform: translate(0);
     transform: translate(0);
 }
 
-.sidebar-links {
+.old-sidebar-links {
     text-align: center;
 }
 
-/* add sidebar links to navbar links */
+/* add old-sidebar links to old-navbar links */
 
-.sidebar-links a {
+.old-sidebar-links a {
     font-size: 2rem;
     text-transform: capitalize;
     -webkit-transition: var(--transition);
@@ -331,7 +341,7 @@ Sidebar
     margin-bottom: 1.5rem;
 }
 
-.sidebar-links a:hover {
+.old-sidebar-links a:hover {
     color: var(--clr-primary-5);
 }
 
@@ -831,7 +841,7 @@ Services
 ===============
 */
 
-.sidebar-left {
+.old-sidebar-left {
     margin-bottom: 30px;
     padding: 10px;
     background: var(--clr-white);

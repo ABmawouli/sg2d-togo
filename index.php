@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Métadonnées de base -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="ONG GEOSPACE TOGO - Science Géologique pour un Développement Durable">
+  <meta name="description"
+    content="ONG GEOSPACE TOGO — Promouvoir la science géologique et l'astronomie pour un développement durable au Togo et en Afrique.">
+  <meta name="keywords"
+    content="géologie, développement durable, GEOSPACE TOGO, sciences de la Terre, ONG, Togo, astronomie, environnement">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="GEOSPACE TOGO - Science Géologique pour un Développement Durable">
+  <meta property="og:description"
+    content="Découvre les actions de GEOSPACE TOGO pour la vulgarisation des sciences de la Terre et la protection de l'environnement.">
+  <meta property="og:image" content="https://www.GEOSPACE TOGO.tg/images/logo-s2gd.png">
+  <!-- le lien du site web et Remplace par ton image -->
+  <meta property="og:url" content="https://www.GEOSPACE TOGO.tg"> <!-- le lien du site web -->
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GEOSPACE TOGO - Science Géologique pour un Développement Durable">
+  <meta name="twitter:description"
+    content="Promouvoir la géologie et l'astronomie pour un développement durable au Togo.">
+  <meta name="twitter:image" content="https://www.GEOSPACE TOGO.tg/images/logo-s2gd.png">
+  <!-- le lien du site web et Remplace par ton image -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="images/png" href="/images/logo-s2gd.png">
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/css-image-font.css">
+
+  <!-- Titre -->
+  <title>GEOSPACE TOGO - Science Géologique pour un Développement Durable</title>
+</head>
+
+<body>
+
+  <!-- conteneur pour le header -->
+  <div id="header-placeholder">
+    <?php include 'header.php'; ?>
+  </div>
+  <!-- Banner -->
+  <div class="banner">
+    <div class="container">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <!-- SLIDE 1 -->
+          <div class="carousel-item active">
+            <section>
+              <div class="section-center clearfix">
+                <!-- banner-img -->
+                <article class="banner-img">
+                  <div class="banner-picture-container">
+                    <img src="./images/visuel-1.jpg" alt="GEOSPACE TOGO" class="banner-picture" />
+                  </div>
+                </article>
+                <!-- banner-info -->
+                <article class="banner-info">
+                  <div class="banner-title">
+                    <h3>Découvrir GEOSPACE TOGO</h3>
+                    <h2>Science Durable</h2>
+                  </div>
+                  <p class="banner-text">
+                    Science Géologique pour un Développement Durable agit pour la
+                    vulgarisation des sciences de la Terre et pour la formation
+                    des jeunes.
+                  </p>
+                  <p class="banner-text">
+                    L’ONG GEOSPACE TOGO promeut la connaissance du sol, la préservation
+                    des ressources et la culture scientifique au Togo.
+                    L’ONG GEOSPACE TOGO promeut la connaissance du sol, la préservation
+                    des ressources et la culture scientifique au Togo.
+                  </p>
+                  <a href="detail.html" class="btn">Voir plus</a>
+                </article>
+              </div>
+            </section>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="carousel-item">
+            <section>
+              <div class="section-center clearfix">
+                <!-- banner-img -->
+                <article class="banner-img">
+                  <div class="banner-picture-container">
+                    <img src="./images/visuel-2.jpg" alt="GEOSPACE TOGO" class="banner-picture" />
+                  </div>
+                </article>
+                <!-- banner-info -->
+                <article class="banner-info">
+                  <div class="banner-title">
+                    <h3>Former à l'Astronomie</h3>
+                    <h2>Apprendre GEOSPACE TOGO</h2>
+                  </div>
+                  <p class="banner-text">
+                    GEOSPACE TOGO initie des activités éducatives sur les sciences
+                    géologiques et astronomiques au service du développement.
+                  </p>
+                  <p class="banner-text">
+                    Nous soutenons la recherche et la diffusion des savoirs
+                    pour inspirer une jeunesse curieuse et engagée.
+                    pour inspirer une jeunesse curieuse et engagée.
+                    pour inspirer une jeunesse curieuse et engagée.
+                    pour inspirer une jeunesse curieuse et engagée.
+
+                  </p>
+                  <a href="detail.html" class="btn">Voir plus</a>
+                </article>
+              </div>
+            </section>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="carousel-item">
+            <section>
+              <div class="section-center clearfix">
+                <!-- banner-img -->
+                <article class="banner-img">
+                  <div class="banner-picture-container">
+                    <img src="./images/visuel-3.jpg" alt="GEOSPACE TOGO" class="banner-picture" />
+                  </div>
+                </article>
+                <!-- banner-info -->
+                <article class="banner-info">
+                  <div class="banner-title">
+                    <h3>Agir pour demain</h3>
+                    <h2>Projet GEOSPACE TOGO</h2>
+                  </div>
+                  <p class="banner-text">
+                    L’ONG mène des projets de sensibilisation sur la Terre,
+                    la géologie et l’environnement pour un avenir durable.
+                  </p>
+                  <p class="banner-text">
+                    Ensemble, GEOSPACE TOGO fait découvrir la planète et valorise
+                    les sciences pour le bien de tous.
+                    les sciences pour le bien de tous.
+                    les sciences pour le bien de tous.
+                    les sciences pour le bien de tous.
+                    les sciences pour le bien de tous.
+                    les sciences pour le bien de tous.
+                    les sciences pour le bien de tous.
+
+                  </p>
+                  <a href="detail.html" class="btn">Découvrir</a>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .banner-info {
+      background: rgba(0, 0, 0, 0.45);
+      /* noir léger, plus neutre que le rouge */
+      backdrop-filter: blur(6px);
+      /* flou un peu plus doux */
+      padding: 20px 25px;
+      border-radius: 12px;
+
+      /* bordure subtile pour bien délimiter sans trop de contraste */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      /* texte lisible */
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+  <!-- end banner -->
+
+  <br><br>
+  <!-- publications spéciales cliquable -->
+  <a href="#all-articles" class="popular-post-link" style="text-decoration: none; color: inherit;">
+    <div class="popular-post">
+      <div class="container">
+        <section class="section projects">
+          <div class="section-title">
+            <h2>À découvrir</h2>
+            <div class="underline"></div>
+          </div>
+          <br><br><br>
+
+          <div class="section-center projects-center">
+            <!-- article 1 -->
+            <div class="project-1">
+              <article class="project">
+                <img src="./images/populaire-1.jpg" alt="GEOSPACE TOGO géologie" class="project-img" />
+                <div class="project-info">
+                  <h4>Observer le ciel profond</h4>
+                  <p>Astronomie</p>
+                </div>
+              </article>
+            </div>
+            <!-- article 2 -->
+            <div class="project-2">
+              <article class="project">
+                <img src="./images/populaire-2.jpg" alt="GEOSPACE TOGO développement durable" class="project-img" />
+                <div class="project-info">
+                  <h4>Explorer l'Univers vivant</h4>
+                  <p>Astronomie</p>
+                </div>
+              </article>
+            </div>
+            <!-- article 3 -->
+            <div class="project-3">
+              <article class="project">
+                <img src="./images/populaire-3.jpg" alt="GEOSPACE TOGO science planétaire" class="project-img" />
+                <div class="project-info">
+                  <h4>Les mystères des planètes</h4>
+                  <p>Sciences</p>
+                </div>
+              </article>
+            </div>
+            <!-- article 4 -->
+            <div class="project-4">
+              <article class="project">
+                <img src="./images/populaire-4.jpg" alt="GEOSPACE TOGO éducation scientifique" class="project-img" />
+                <div class="project-info">
+                  <h4>Apprendre la Terre et le ciel</h4>
+                  <p>Éducation</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </a>
+  <!-- fin publications spéciales -->
+  <br> <br>
+  <!-- Liste des domaines -->
+  <div class="categori-list">
+    <div class="container">
+      <section class="section bg-grey">
+        <!-- Titre -->
+        <div class="section-title mt-5">
+          <h2>Focus sur nos domaines</h2>
+          <div class="underline"></div>
+        </div>
+
+        <!-- Cartes des domaines -->
+        <div class="section-center services-center">
+          <!-- Domaine 1 : Astronomie pratique -->
+          <article class="service">
+            <i class="fas fa-star ser-icon"></i>
+            <h4>Astronomie pratique</h4>
+            <div class="underline"></div>
+            <p>
+              Apprenez à observer les étoiles, les planètes et les constellations, et développez votre
+              passion pour le ciel nocturne.
+            </p>
+          </article>
+
+          <!-- Domaine 2 : Systèmes planétaires -->
+          <article class="service">
+            <i class="fa fa-globe ser-icon" aria-hidden="true"></i>
+            <h4>Systèmes planétaires</h4>
+            <div class="underline"></div>
+            <p>
+              Explorez les planètes, le Soleil, la Lune et les étoiles pour mieux comprendre notre
+              univers et son fonctionnement.
+            </p>
+          </article>
+
+          <!-- Domaine 3 : Éducation scientifique -->
+          <article class="service">
+            <i class="fa fa-graduation-cap ser-icon"></i>
+            <h4>Éducation scientifique</h4>
+            <div class="underline"></div>
+            <p>
+              Programmes éducatifs, des ateliers et des activités pour former les jeunes
+              à l’astronomie et aux sciences de la Terre.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- fin liste des domaines -->
+
+
+  <!-- Blog debut -->
+  <div class="blog" id="all-articles">
+    <div class="container">
+      <div class="section-title mt-5">
+        <h2>Tous les articles</h2>
+        <div class="underline"></div>
+      </div>
+
+      <div class="mb-5">
+        <!-- Articles en vedette -->
+        <section class="section" id="featured">
+          <div class="section-center featured-center">
+            <div class="row justify-content-start" id="blog-container">
+              <!-- Les articles seront injectés ici par JavaScript -->
+
+            </div>
+            <div class="blog-btn mt-5 text-center">
+              <a href="#" class="btn btn-primary">Voir plus</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <!-- Blog fin -->
+
+  <style>
+    /* Container blog */
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Image */
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Content */
+    .blog-content {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* Top info: category + date */
+    .blog-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .blog-category {
+      background-color: #25D366;
+      /* couleur badge */
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .blog-date {
+      font-size: 0.75rem;
+      color: #888;
+      position: relative;
+      /* pas absolute */
+      float: none;
+    }
+
+
+
+    /* Title */
+    .blog-content h3 {
+      font-size: 1.2rem;
+      margin: 4px 0 8px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* Description: max 3 lines */
+    .blog-description {
+      font-size: 0.95rem;
+      color: #555;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    /* Bottom: author + button */
+    .blog-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blog-author {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .blog-card .btn {
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive grid */
+    .row#blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .row#blog-container>div {
+      flex: 1 1 calc(33.333% - 20px);
+      /* 3 par ligne sur PC */
+    }
+
+    /* Tablette */
+    @media screen and (max-width: 992px) {
+      .row#blog-container>div {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 par ligne */
+      }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 576px) {
+      .row#blog-container>div {
+        flex: 1 1 100%;
+        /* 1 par ligne */
+      }
+
+      .blog-card img {
+        height: 180px;
+      }
+    }
+  </style>
+
+  <script>
+    async function loadHTMLyPosts() {
+      const API_URL = "http://localhost/geospace-togo/api.php";
+
+      try {
+        const response = await fetch(API_URL);
+        const posts = await response.json();
+        const container = document.getElementById("blog-container");
+
+        container.innerHTML = "";
+
+        posts.forEach(post => {
+          const dateObj = new Date(post.date);
+          const options = {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          };
+          const formattedDate = dateObj.toLocaleDateString('fr-FR', options);
+
+          const card = `
+            <div class="col-md-4 mb-4">
+                <div class="blog-card">
+                    <img src="${post.image || 'placeholder.jpg'}" alt="${post.titre}">
+                    <div class="blog-content">
+                        <div class="blog-top">
+                            <span class="blog-category">${post.categorie || 'Général'}</span>
+                            <span class="blog-date">${formattedDate}</span>
+                        </div>
+                        <h3>${post.titre}</h3>
+                        <p class="blog-description">${post.description.substring(0, 150)}...</p>
+                        <div class="blog-bottom">
+                            <span class="blog-author">${post.auteur || 'HTMLy'}</span>
+                            <a href="${post.link}" class="btn btn-primary">Lire la suite →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+          container.innerHTML += card;
+        });
+
+      } catch (error) {
+        console.error("Erreur API:", error);
+        document.getElementById("blog-container").innerHTML = "<p>Impossible de charger les articles.</p>";
+      }
+    }
+
+    loadHTMLyPosts();
+  </script>
+
+
+
+
+
+
+   <!-- conteneur pour  Footer -->
+  <div id="footer-placeholder">
+    <?php include 'footer.php'; ?>
+  </div>
+
+  <script src="./js/popper.min.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

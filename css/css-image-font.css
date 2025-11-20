@@ -1,6 +1,6 @@
 .banner {
   position: relative;
-  background-image: url('../image/carousel-astronomie-1.jpg');
+  background-image: url('../images/carousel-astronomie-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,13 +13,13 @@
 /* effet de fondu entre deux images */
 @keyframes defileFond {
   0% {
-    background-image: url('../image/carousel-astronomie-2.jpg');
+    background-image: url('../images/carousel-astronomie-2.jpg');
   }
   50% {
-    background-image: url('../image/carousel-astronomie-3.jpg');
+    background-image: url('../images/carousel-astronomie-3.jpg');
   }
   100% {
-    background-image: url('../image/logo-s2gd.png');
+    background-image: url('../images/logo-2.jpeg');
   }
 }
 

@@ -1,0 +1,789 @@
+/* ===================================================================
+   CSS COMBINÉ - PAGES GEOSPACE TOGO
+   Pages: À Propos, Contact
+   =================================================================== */
+
+/* ===================================================================
+   STYLES COMMUNS - HERO SECTIONS
+   =================================================================== */
+
+/* Hero général pour toutes les pages */
+.hero-section,
+.hero-contact {
+  background: linear-gradient(135deg, var(--bleu-profond) 0%, #003d7a 100%);
+  color: var(--blanc-lunaire);
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section {
+  padding: 4rem 0;
+}
+
+/* Effet de vagues pour la page À Propos */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat center bottom;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1,
+.hero-contact h1 {
+  color: var(--blanc-lunaire);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p,
+.hero-contact p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .devise {
+  font-size: 1.3rem;
+  color: var(--jaune-solaire);
+  margin-top: 1rem;
+}
+
+/* ===================================================================
+   PAGE À PROPOS - STYLES SPÉCIFIQUES
+   =================================================================== */
+
+/* Section Mission Vision Valeurs */
+.mvv-section {
+  padding: 3rem 0;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mvv-card {
+  background: var(--blanc-lunaire);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--ombre-legere);
+  border-left: 4px solid var(--vert-orbital);
+  transition: var(--transition-normale);
+}
+
+.mvv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-moyenne);
+  border-left-color: var(--jaune-solaire);
+}
+
+.mvv-card i {
+  font-size: 2.5rem;
+  color: var(--vert-orbital);
+  margin-bottom: 1rem;
+}
+
+.mvv-card h3 {
+  color: var(--bleu-profond);
+  margin-bottom: 1rem;
+}
+
+/* Section Timeline / Histoire */
+.timeline-section {
+  background: var(--gris-clair);
+  padding: 3rem 0;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--vert-orbital);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  background: var(--blanc-lunaire);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--ombre-legere);
+  position: relative;
+}
+
+.timeline-date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--vert-orbital);
+  color: var(--blanc-lunaire);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.timeline-content h4 {
+  color: var(--bleu-profond);
+  margin-bottom: 0.5rem;
+}
+
+/* Section Équipe */
+.team-section {
+  padding: 3rem 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: var(--blanc-lunaire);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--ombre-legere);
+  transition: var(--transition-normale);
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ombre-forte);
+}
+
+/* === PHOTO ÉQUIPE === */
+.team-photo {
+  width: 200px;
+  height: 200px;
+  margin: 1.5rem auto 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+
+/* === INFO ÉQUIPE === */
+.team-info {
+  padding: 1.5rem;
+}
+
+.team-info h4 {
+  color: var(--bleu-profond);
+  margin-bottom: 0.3rem;
+}
+
+.team-info .role {
+  color: var(--vert-orbital);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-info p {
+  font-size: 0.9rem;
+  color: var(--gris-moyen);
+}
+
+/* Section Statistiques */
+.stats-section,
+.stats-banner {
+  background: linear-gradient(135deg, var(--bleu-profond), #003d7a);
+  color: var(--blanc-lunaire);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.stats-banner {
+  padding: 2.5rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stats-banner .stats-grid {
+  margin-top: 1.5rem;
+}
+
+.stat-item,
+.stat-box {
+  padding: 1.5rem;
+}
+
+.stat-box {
+  padding: 1rem;
+}
+
+.stat-item i,
+.stat-box i {
+  font-size: 2.5rem;
+  color: var(--jaune-solaire);
+  margin-bottom: 1rem;
+}
+
+.stat-box i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--blanc-lunaire);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-box .stat-number {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-box .stat-label {
+  font-size: 1rem;
+}
+
+/* ===================================================================
+   PAGE CONTACT - STYLES SPÉCIFIQUES
+   =================================================================== */
+
+/* Section principale contact */
+#contact-section.contact-section {
+  padding: 3rem 0;
+  background: var(--blanc-lunaire);
+}
+
+#contact-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* ===================================================================
+   INFORMATIONS DE CONTACT (GAUCHE - 40%)
+   =================================================================== */
+
+.contact-info {
+  flex: 0 1 350px;
+  min-width: 280px;
+  background: linear-gradient(135deg, var(--bleu-profond) 0%, #003d7a 100%);
+  color: var(--blanc-lunaire);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 33, 71, 0.3);
+  height: fit-content;
+}
+
+.contact-info h3 {
+  color: var(--blanc-lunaire);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 3px solid var(--jaune-solaire);
+}
+
+.contact-info h4 {
+  color: var(--jaune-solaire);
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.contact-info p i {
+  color: var(--vert-orbital);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  min-width: 22px;
+}
+
+/* Réseaux sociaux */
+.contact-info p:last-child {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  justify-content: flex-start;
+}
+
+.contact-info p:last-child a {
+  color: var(--blanc-lunaire);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contact-info p:last-child a:hover {
+  color: var(--jaune-solaire);
+  transform: scale(1.15) translateY(-3px);
+}
+
+.contact-info p:last-child a i {
+  margin: 0;
+}
+
+/* ===================================================================
+   FORMULAIRE DE CONTACT (DROITE - 60%)
+   =================================================================== */
+
+.contact-form {
+  flex: 1 1 500px;
+  min-width: 300px;
+  background: var(--blanc-lunaire);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gris-clair);
+}
+
+.contact-form h3 {
+  color: var(--bleu-profond);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 3px solid var(--vert-orbital);
+}
+
+/* Groupes de formulaire */
+.contact-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form .form-group label {
+  display: block;
+  color: var(--bleu-profond);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Inputs, select et textarea - COMPACTS */
+.contact-form .form-group input,
+.contact-form .form-group select,
+.contact-form .form-group textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--gris-clair);
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  color: var(--gris-moyen);
+  background-color: var(--blanc-lunaire);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus,
+.contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: var(--vert-orbital);
+  box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.12);
+  background-color: #fafffe;
+}
+
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Select personnalisé */
+.contact-form .form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300c853"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.1rem;
+  padding-right: 2.3rem;
+}
+
+.contact-form .form-group select option {
+  padding: 0.5rem;
+}
+
+/* Textarea COMPACT */
+.contact-form .form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* Indicateurs de chargement et notifications */
+#loading-indicator {
+  display: none;
+  color: var(--vert-orbital);
+  font-weight: 600;
+  padding: 0.7rem;
+  margin-top: 0.8rem;
+  text-align: center;
+  border-radius: 6px;
+  background: rgba(0, 200, 83, 0.1);
+  font-size: 0.9rem;
+}
+
+#notification {
+  display: none;
+  color: var(--blanc-lunaire);
+  background: var(--vert-orbital);
+  padding: 0.9rem;
+  margin-top: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0, 200, 83, 0.3);
+  animation: slideInNotif 0.4s ease-out;
+  font-size: 0.95rem;
+}
+
+@keyframes slideInNotif {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Boutons du formulaire - COMPACTS */
+.contact-form button {
+  padding: 0.75rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.contact-form button[type="reset"] {
+  background: var(--gris-clair);
+  color: var(--gris-moyen);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form button[type="reset"]:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form button[type="submit"],
+.contact-form button.btn-primary {
+  background: linear-gradient(135deg, var(--vert-orbital), var(--bleu-profond));
+  color: var(--blanc-lunaire);
+  box-shadow: 0 4px 15px rgba(0, 200, 83, 0.25);
+}
+
+.contact-form button[type="submit"]:hover,
+.contact-form button.btn-primary:hover {
+  background: linear-gradient(135deg, var(--bleu-profond), var(--vert-orbital));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.35);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+
+/* Section Horaires */
+.hours-section {
+  background: var(--bleu-clair);
+  padding: 3rem 0;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hours-card {
+  background: var(--blanc-lunaire);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--ombre-legere);
+  text-align: center;
+  border-top: 4px solid var(--vert-orbital);
+}
+
+.hours-card i {
+  font-size: 2.5rem;
+  color: var(--vert-orbital);
+  margin-bottom: 1rem;
+}
+
+.hours-card h3 {
+  color: var(--bleu-profond);
+  margin-bottom: 1rem;
+}
+
+.hours-card p {
+  color: var(--gris-moyen);
+  margin: 0.3rem 0;
+}
+
+.hours-card .highlight {
+  color: var(--vert-orbital);
+  font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 3rem 0;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.faq-item {
+  background: var(--blanc-lunaire);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--ombre-legere);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1.5rem;
+  background: var(--gris-clair);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-rapide);
+}
+
+.faq-question:hover {
+  background: #ececec;
+}
+
+.faq-question h4 {
+  color: var(--bleu-profond);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.faq-question i {
+  color: var(--vert-orbital);
+  transition: transform var(--transition-rapide);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 1.5rem;
+}
+
+.faq-answer p {
+  color: var(--gris-moyen);
+  line-height: 1.7;
+}
+
+/* ===================================================================
+   RESPONSIVE - MEDIA QUERIES
+   =================================================================== */
+
+/* Tablettes */
+@media screen and (max-width: 992px) {
+  #contact-section .container {
+    gap: 1.5rem;
+  }
+
+  .contact-form,
+  .contact-info {
+    flex: 1 1 100%;
+  }
+
+  /* Inverser l'ordre sur tablette : formulaire en haut */
+  .contact-form {
+    order: 2;
+  }
+
+  .contact-info {
+    order: 1;
+  }
+}
+
+/* Smartphones */
+@media screen and (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  #contact-section.contact-section {
+    padding: 2rem 0;
+  }
+
+  #contact-section .container {
+    padding: 0 1rem;
+    gap: 1.2rem;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 1.5rem;
+    min-width: 100%;
+  }
+
+  .contact-form h3,
+  .contact-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .contact-info h4 {
+    font-size: 1.1rem;
+    margin-top: 1.3rem;
+  }
+
+  .contact-form button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-info p:last-child {
+    justify-content: center;
+    gap: 1.8rem;
+  }
+
+  /* Timeline responsive */
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    margin-left: 40px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-date {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+  .contact-form .form-group input,
+  .contact-form .form-group select,
+  .contact-form .form-group textarea {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  .contact-info p {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .contact-info p i {
+    margin-top: 0;
+  }
+}
+
+/* ===================================================================
+   FIN DU FICHIER CSS COMBINÉ
+   =================================================================== */
